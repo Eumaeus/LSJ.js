@@ -57,7 +57,7 @@ footer > p > a:hover {
 div.small_print {
 	font-family: Helvetica, sans;
 	font-weight: 300;
-	font-size: 12pt;
+	font-size: 11pt;
 	line-height: 1.3;
 	color: 582c83;
 }
@@ -72,6 +72,7 @@ p#menu {
 }
 
 .greekFont {
+
 	 font-family: "EB Garamond",  "LinuxLibertineORegular", "AseaRegular", "Times", serif; 
 	/* font-family: system-ui; */
 }
@@ -136,6 +137,7 @@ div#searchEnglishDiv {
 	position: absolute;
 	top: 5em;
 	left: 38em;
+	max-width: 30em;
 }
 
 div#passageInputDiv{
@@ -145,8 +147,8 @@ div#passageInputDiv{
 }
 
 button#searchButton, button#querySubmit {
-	display: block;
-	margin-left: 10em;
+	display: inline;
+	margin-left: 1em;
 }
 
 label {
@@ -218,7 +220,7 @@ span.lexEntryUrn, span.lexEntryLink {
 }
 
 span.lexEntryUrn:hover:before {
-	content: "Click to copy ➙ ";
+	content: "Link to this entry ➙ ";
 	color: white;
 }
 
@@ -320,7 +322,7 @@ ul#resultsList {
 	color: navy;
 	margin-left: 0;
 	padding-left: 0;
-	margin-top:	7em;
+	margin-top:	8em;
 	max-height: 8em;
 	overflow: scroll;
 	cursor: pointer;
@@ -356,7 +358,7 @@ ul#alphaList {
 	margin-left: 0;
 	padding-left: 1em;
 	width: 3em;
-	height: 550px;
+	height: 600px;
 }
 
 
@@ -368,7 +370,7 @@ ul#volumeList {
 	padding-left: 1em;
 	width: 9em;
 	margin-right: 1em;
-	height: 550px;
+	height: 600px;
 	/* overflow: scroll; */
 
 	border-top: 1px solid #ddd;
@@ -394,6 +396,12 @@ ul#alphaList li:hover, ul#volumeList li:hover {
 ul#alphaList li.selected, ul#volumeList li.selected {
 	background-color: navy;
 	color: white;
+	cursor: pointer;
+}
+
+ul#alphaList li:active, ul#volumeList li:active {
+	background-color: maroon;
+	color: rgb(255, 240, 194);
 	cursor: pointer;
 }
 
@@ -916,35 +924,41 @@ a:hover {
 	top: 3em;
 	right: 1em;
 	z-index: 100;
-	-webkit-transition: all 0.5s ease-out 1s;
-	-moz-transition: all 0.5s ease-out 1s;
-	-ms-transition: all 0.5s ease-out 1s;
-	-o-transition: all 0.5s ease-out 1s;
-	transition: all 0.5s ease-out 1s;
+	
+	/*
+	-webkit-transition: all 0.2s ease-out 0.2s;
+	-moz-transition: all 0.2s ease-out 0.2s;
+	-ms-transition: all 0.2s ease-out 0.2s;
+	-o-transition: all 0.2s ease-out 0.2s;
+	transition: all 0.2s ease-out 0.5s;
+*/
+	
 }
 
+/* don't forget .app_hidden */
 
-.app_message p {
+#main_message p {
 	padding: 5px;
 	line-height: 1.2em;
 	margin: 0;
+	font-size: 12pt;
 }
 
-.app_message.default, #mainMessage.default {
+#main_message.default, #mainMessage.default {
 	border: 1px solid rgba(38, 121, 39, 1);
 	background-color: rgba(50, 161, 52, 1);
-	color: black;
+	color: white;
 }
-.app_message.wait, #mainMessage.wait {
+#main_message.wait, #mainMessage.wait {
 	border: 1px solid rgba(217, 201, 101, 1);
 	background-color: rgba(247, 231, 131, 1);
 	color: black;
 }
 
-.app_message.warn, #mainMessage.warn {
+#main_message.warn, #mainMessage.warn {
 	border: 1px solid rgba(141, 30, 32, 1);
 	background-color: rgba(161, 50, 52, 1);
-	color: black;
+	color: white;
 }
 
 #app_header_versionInfo {
@@ -1403,7 +1417,7 @@ input[type=submit]:hover {
 html,
 body {
 	height: 100%;
-	padding: 15px;
+	padding: 5px 10px 10px 10px;
 }
 
 html.loading, body.loading {
