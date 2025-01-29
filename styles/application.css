@@ -935,6 +935,21 @@ a:hover {
 	
 }
 
+/* Help Stuff */
+
+img.help_image {
+		max-width: 600px;
+		border: 2px solid silver;
+		margin: 1em;
+ 	background: silver;
+}
+
+figcaption {
+	color: maroon;
+	padding: 0.5em;
+	background: #eee;
+}
+
 /* don't forget .app_hidden */
 
 #main_message p {
