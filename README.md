@@ -8,7 +8,7 @@ This is an implementation of a web-application for consulting [*A Greek-English 
 
 ## Why This Rewrite?
 
-I wanted a lexicon that depended as little as possible on fragile build-systems with innumerable dependencies. Both the Julia and Scala versions were laborious to update and keep online. This application uses [jQuery] and [Marked.js], which can be hosted locally.
+I wanted a lexicon that depended as little as possible on fragile build-systems with innumerable dependencies. Both the Julia and Scala versions were laborious to update and keep online. This application uses [jQuery](https://jquery.com) and [Marked.js](https://marked.js.org), which can be hosted locally.
 
 This version can be run entirely offline from a personal machine.
 
