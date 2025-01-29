@@ -26,7 +26,7 @@ There is a Help File linked from the application, once you get it running.
 
 ## The Data
 
-[I describe the work to transform the *LSJ* data from openly licensed sources here.](https://eumaeus.github.io/2018/10/30/lsj.html) There is a link in the application for downloading the raw lexicon file, `lexicon.cex`. This is a self-describing data-collection in the form of a single plain-text file, based on the [CITE Architecture](https://github.com/cite-architecture).
+[I describe the work to transform the *LSJ* data from openly licensed sources here.](https://eumaeus.github.io/2018/10/30/lsj.html) There is a link in the application for downloading the raw lexicon file, `lexicon.cex`. This is a self-describing data-collection in the form of a single plain-text file, based on the [CITE Architecture](https://github.com/cite-architecture). That files is in the `/data/` directory of this Git archive.
 
 ## Acknowledgements
 
