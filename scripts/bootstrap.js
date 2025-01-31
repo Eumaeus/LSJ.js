@@ -28,7 +28,7 @@ $.get( indexFileName, function( data ) {
 
 
 function announceReady() {
-  messageInfo("All data loaded.");
+  messageInfo("All data loaded: " + numberWithCommas(lexData.length)  + " entries.");
 }
 
 
@@ -59,5 +59,13 @@ function loadLexicon(data) {
 
 }
 
+/* Misc */
 
+function numberWithCommas(x) {
+    x = x.toString();
+    var pattern = /(-?\d+)(\d{3})/;
+    while (pattern.test(x))
+        x = x.replace(pattern, "$1,$2");
+    return x;
+}
 
