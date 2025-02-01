@@ -219,6 +219,12 @@ span.lexEntryUrn, span.lexEntryLink {
 	margin-top: 1em;
 }
 
+p#entryStats {
+	color: #444;
+	margin-bottom: 0;
+	font: 12px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
 span.lexEntryUrn:hover:before {
 	content: "Link to this entry ➙ ";
 	color: white;
