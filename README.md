@@ -1,6 +1,6 @@
 # LSJ.js
 
-![version 1.0.2](https://img.shields.io/badge/LSJ.js-1.0.2-orange)
+![version 1.0.3](https://img.shields.io/badge/LSJ.js-1.0.3-orange)
 
 A Javascript-only implementation of the LSJ Greek-English lexicon.
 

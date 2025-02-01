@@ -1,4 +1,17 @@
 
+
+/* ****************************** */
+/* URN Request Param */
+/* ****************************** */
+
+function getUrnParam(){
+	let queryString = window.location.search;
+	let urlParams = new URLSearchParams(queryString);
+	let urnParam = urlParams.get("urn");
+	return urnParam;
+}
+
+
 /* ****************************** */
 /* Alphabet List */
 /* ****************************** */
@@ -24,27 +37,15 @@ function clearAlphabetSelection(){
 
 function updateAlphabetSelection( elementId ) {
 	 // Remove all "selected"
-	 $("#alphaList li").removeClass("selected");
-  $("#" + elementId).addClass("selected");
-  updateVolumeListFromAlphaList( $("#" + elementId).attr("data-lookup") );
+	 clearAlphabetSelection();
+   $("#" + elementId).addClass("selected");
+   // This will clear VolumeList, reload it, and scroll to top
+   updateVolumeListFromAlphaList( $("#" + elementId).attr("data-lookup") );
 }
 
 function updateAlphaListFromEntry(entryId) {
 
 }
-
-/* ****************************** */
-/* URN Request Param */
-/* ****************************** */
-
-function getUrnParam(){
-	let queryString = window.location.search;
-	let urlParams = new URLSearchParams(queryString);
-	let urnParam = urlParams.get("urn");
-	return urnParam;
-}
-
-
 
 
 /* ****************************** */
@@ -95,18 +96,33 @@ function updateVolumeListSelection( elementId ) {
 }
 
 function updateVolumeListFromAlphaList( betaLetter ) {
-			// clear out
+		// clear out
 		$("#volumeList").html("");
-			// Get the right entries from indexData
-			var entriesForLetter = indexData.filter( (ie) => {
-					return ie.lookuplemma[0] == betaLetter
-			});
-			// Populate list
-			for (ie in entriesForLetter) {
-						let urnId = entriesForLetter[ie].urn.split(":")[4];
-					 li = `<li id="entry_${urnId}">${entriesForLetter[ie].lemma}</li>`;
-					 $("#volumeList").append(li);
-			}
+		// Get the right entries from indexData
+		var entriesForLetter = indexData.filter( (ie) => {
+				return ie.lookuplemma[0] == betaLetter
+		});
+
+		// Populate list
+		for (ie in entriesForLetter) {
+			let urnId = entriesForLetter[ie].urn.split(":")[4];
+	  	li = `<li id="entry_${urnId}">${entriesForLetter[ie].lemma}</li>`;
+			$("#volumeList").append(li);
+		}
+		clearVolumeSelection();
+		scrollVolumeListToTop();
+}
+
+function scrollVolumeListToTop() {
+	var $ul = $('ul#volumeList');
+	$ul.scrollTop(0);
+
+	var offsetTop = $ul.offset().top;
+		    
+  // Animate scrolling to the target position. The '200' is the duration in milliseconds.
+  $ul.animate({
+    scrollTop: offsetTop - 100 // Subtract a little to not have it exactly at the top
+  }, 200);
 }
 
 
